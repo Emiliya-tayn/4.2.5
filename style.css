@@ -1,0 +1,82 @@
+.body {
+    background-color: #0096c7;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.wrapper {
+    align-self: center;
+    margin-top: 100px;
+    height: 500px;
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.input-container__input {
+    width: 400px;
+    height:55px;
+    border: none;
+    border-radius: 5px;
+    font-size: 22px;
+    outline: none;
+    padding: 2px;
+}
+.autocomplete-list {
+    width:400px;
+    max-height: 400px;
+    margin:0;
+    background-color: white;
+    list-style: none;
+    padding: 2px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: none;
+}
+.autocomplete-list__item {
+    padding: 2px;
+    font-size: 22px;
+    height: 40px;
+}
+.autocomplete-list__item:hover,
+.autocomplete-list__item:focus{
+    background-color: #5e60ce;
+    color: white;
+}
+.active {
+    display: block;
+}
+.repos-list{
+    display: flex;
+    justify-content: space-between;
+
+}
+.repos-list__item {
+    width: 200px;
+    height: 150px;
+    background-color: #5e60ce;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.repos-list__text {
+    margin-left: 5px;
+    color: white;
+}
+.repos-list__button {
+    background-color: rebeccapurple;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    border: 0;
+    margin-left: 160px;
+}
+.hidden{
+    display: none;
+}
+
+
