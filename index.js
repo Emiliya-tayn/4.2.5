@@ -68,19 +68,19 @@ function getSearch() {
 
                for (let g = 0; g < 3; g++) {
 
-                   let pTag = document.createElement('p');
-                   pTag.classList.add('repos-list__text');
-                   divTag.appendChild(pTag);
+                   let textTag = document.createElement('div');
+                   textTag.classList.add('repos-list__text');
+                   divTag.appendChild(textTag);
 
 
                    if (g === 0) {
-                       pTag.textContent = `name: ${currentData[i].name}`;
+                       textTag.textContent = `name: ${currentData[i].name}`;
                    }
                    if (g === 1) {
-                       pTag.textContent = `owner: ${currentData[i]['full_name'].substr(0, slash)}`;
+                       textTag.textContent = `owner: ${currentData[i]['full_name'].substr(0, slash)}`;
                    }
                    if (g === 2) {
-                       pTag.textContent = `id: ${currentData[i].id}`;
+                       textTag.textContent = `id: ${currentData[i].id}`;
                    }
                }
 

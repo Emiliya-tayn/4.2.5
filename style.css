@@ -1,5 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: BB-Anonim;
+    src: url(fonts/BBAnonymPro-Normal.ttf);
+}
 .body {
-    background-color: #0096c7;
+    font-family: BB-Anonim, sans-serif;
+    background-color: #ade8f4;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -55,25 +64,42 @@
 }
 .repos-list__item {
     width: 200px;
-    height: 150px;
-    background-color: #5e60ce;
+    height: 130px;
+    background-color: #48cae4;
     margin-left: 10px;
     margin-bottom: 5px;
     cursor: pointer;
     border-radius: 5px;
+    box-shadow: -2px 2px 3px 1px #0096c7;
 
 }
 .repos-list__text {
     margin-left: 5px;
-    color: white;
+    font-weight: 600;
+    line-height: 18px;
+    margin-bottom: 5px;
+    width: 150px;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 .repos-list__button {
     background-color: rebeccapurple;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50px;
     border: 0;
     margin-left: 160px;
+    position: relative;
+
+}
+.repos-list__button::before {
+    content: '';
+    background-image: url("icon/icon.svg");
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 9px;
+    top: 6px;
 }
 .hidden{
     display: none;
