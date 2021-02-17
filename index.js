@@ -1,6 +1,7 @@
 const searchInput = document.querySelector('.input-container__input');
 const autocomplete = document.querySelector('.autocomplete-list');
 const reposList = document.querySelector('.repos-list');
+
 const setActive = (selector ,active = true) => {
 
     if(active) {
@@ -10,13 +11,24 @@ const setActive = (selector ,active = true) => {
        selector.classList.add('active');
     }
 }
+
+const debounce = (fn, debounceTime) => {
+    let debounce;
+
+    return function() {
+        clearTimeout(debounce);
+
+        debounce = setTimeout(() => fn.apply(this, arguments), debounceTime)
+    }
+}
+
 function getSearch() {
     let liTag;
     let divTag;
 
     let buttonClose;
 
-    searchInput.addEventListener('input', async function(e) {
+    searchInput.addEventListener('input', debounce(async function(e) {
         e.stopPropagation();
 
         let currentValue = e.target.value;
@@ -47,6 +59,8 @@ function getSearch() {
 
        listItems[i].addEventListener('click', function (e) {
            e.stopPropagation();
+           searchInput.value = '';
+           setActive(autocomplete,true);
                divTag = document.createElement('div');
                divTag.classList.add('repos-list__item');
                reposList.appendChild(divTag);
@@ -87,7 +101,7 @@ function getSearch() {
        })
 
        }
-    })
+    }, 500))
 
 }
 
